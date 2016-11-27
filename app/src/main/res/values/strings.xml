@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ImageLoader</string>
+    <string name="err_msg">Can not lоad image</string>
+</resources>
