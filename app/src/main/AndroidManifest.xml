@@ -11,6 +11,17 @@
         android:supportsRtl="true"
 
         android:theme="@style/AppTheme">
+        <receiver android:name="com.example.macbook.loader.ScreenOfReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="10000">
+                <action
+                    android:name="android.intent.action.SCREEN_ON">
+                </action>
+            </intent-filter>
+        </receiver>
+
+
         <service android:name=".SimpleService" />
         <activity android:name=".MainActivity">
             <intent-filter>

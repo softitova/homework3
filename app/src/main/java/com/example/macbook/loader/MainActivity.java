@@ -19,8 +19,8 @@ import java.io.FileNotFoundException;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    public static final String FILE_NAME = "pic.jpg";
-    public static final String BROADCAST = "myBroadcast";
+    public static final String FILE_NAME = "picture.jpg";
+    public static final String BROADCAST = "com.example.macbook.loader.myBroadcast";
 
 
     private ImageView image;
@@ -37,12 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setFields();
         showImage();
 
-        actRes = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                context.startService(new Intent(context, SimpleService.class));
-            }
-        };
+        actRes = new ScreenOfReceiver();
         imRes = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
@@ -55,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showImage() {
+
         File f = new File(getFilesDir(), FILE_NAME);
         boolean isError = true;
 

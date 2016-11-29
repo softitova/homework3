@@ -29,7 +29,6 @@ public final class SimpleService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.d(TAG, " start");
 
         if (startLoading) {
             return START_STICKY;
@@ -77,7 +76,6 @@ public final class SimpleService extends Service {
                     }
                 }
 
-                Log.d(TAG, " finish");
                 sendBroadcast(new Intent(MainActivity.BROADCAST));
                 startLoading = false;
                 return null;
